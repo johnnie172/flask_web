@@ -1,8 +1,12 @@
 from flask import Flask, request, render_template, jsonify, redirect
 from weather_app import requests_utilities, utilities
+import sys
+import logging
 
 app = Flask(__name__, static_url_path='')
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def index():
