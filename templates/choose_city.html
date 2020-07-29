@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="details__bg details__bg--down">
+	<form class="choose-city-form" action="/weather" method="GET">
+	  <div class="what-city-box">
+	    <label class="what-city-label" for="city">What city:</label>
+	    <input name="query" value="">
+	  </div>
+	    <button class='btn tm-btn-gray check-for-btn'>Check for the weather</button>
+	</form>
+
+</div>
+{% endblock content %}

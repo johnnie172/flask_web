@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="details__bg details__bg--down">
+	<div class = "weather-display">
+	    <div class= "weather-pic">
+		<img src="{{ api_response['current']['weather_icons'][0] }}"/>
+	    </div>
+	    <div class="weather-desc">
+	        {{ weather_str }}
+	    </div>
+	</div>
+	<a href="/choose_city" class="btn tm-btn-gray choose-city-btn">Would you like to choose a diffrent city?</a>
+</div>
+{% endblock content %}

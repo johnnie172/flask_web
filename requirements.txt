@@ -1,0 +1,6 @@
+Flask
+requests
+mock
+gunicorn
+
+
