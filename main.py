@@ -31,6 +31,9 @@ def get_weather():
 def choose_city():
     return render_template('choose_city.html')
 
+@app.route('/nasa')
+def nasa():
+    return render_template('nasa.html')
 
 
 if __name__ == "__main__":
