@@ -10,13 +10,17 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 21px;
   font-weight: 300;
-  color: #FF8F00;
+  color: white;
   position: relative;
 }
 
 h1 {
   font-size: 2.8rem;
-  color: #FF8F00;
+  color: #8B0000;
+}
+
+h2 {
+  color: #8B0000;
 }
 
 #tm-bg {
@@ -203,14 +207,14 @@ margin: auto;
 }
 
 .tm-nav-link {
-  color: #FF8F00;
+  color: #8B0000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 165px;
   height: 165px;
   text-align: center;
-  border: 1px solid #FF8F00;
+  border: 1px solid #8B0000;
   cursor: pointer;
   position: relative;
 }
@@ -239,7 +243,7 @@ margin: auto;
 .tm-nav-icon {
   display: block;
   margin-bottom: 25px;
-  color: #FF8F00;
+  color: #8B0000;
 }
 
 .tm-nav-icon:hover {
