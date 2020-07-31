@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify, redirect
+from flask import Flask, request, render_template, redirect
 from weather_app import requests_utilities, utilities
 import sys
 import logging
@@ -12,17 +12,12 @@ app.logger.setLevel(logging.ERROR)
 def index():
     return render_template('index.html')
 
-@app.route("/get_my_ip", methods=["GET"])
-def get_my_ip():
-
-    return request.headers['X-Forwarded-For'], 200
-
 @app.route('/weather', methods=['GET'])
 def get_weather():
     #todo get exepctions and error
     try:
-
-        city = request.args.get('query', 'fetch:ip')
+        client_ip = request.headers.get('X-Forwarded-For', 'fetch:ip')
+        city = request.args.get('query', client_ip)
         api_response = requests_utilities.get_weather_by_location_json(city)
         weather_dict = requests_utilities.get_info_from_json(api_response)
         weather_dict['current_visibility'] = utilities.visibility_scale_to_desc(weather_dict['current_visibility'])
