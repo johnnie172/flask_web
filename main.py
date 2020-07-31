@@ -12,6 +12,10 @@ app.logger.setLevel(logging.ERROR)
 def index():
     return render_template('index.html')
 
+@app.route("/get_my_ip", methods=["GET"])
+def get_my_ip():
+    return jsonify({'ip': request.remote_addr}), 200
+
 @app.route('/weather', methods=['GET'])
 def get_weather():
     #todo get exepctions and error
