@@ -15,7 +15,7 @@ def index():
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
 
-    return jsonify({'ip': request.environ}), 200
+    return request.headers['X-Forwarded-For'], 200
 
 @app.route('/weather', methods=['GET'])
 def get_weather():
