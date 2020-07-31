@@ -14,12 +14,14 @@ def index():
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
-    return jsonify({'ip': request.remote_addr}), 200
+
+    return jsonify({'ip': request.environ}), 200
 
 @app.route('/weather', methods=['GET'])
 def get_weather():
     #todo get exepctions and error
     try:
+
         city = request.args.get('query', 'fetch:ip')
         api_response = requests_utilities.get_weather_by_location_json(city)
         weather_dict = requests_utilities.get_info_from_json(api_response)
