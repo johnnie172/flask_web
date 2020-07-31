@@ -5,8 +5,6 @@ import logging
 
 app = Flask(__name__, static_url_path='')
 
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def index():
@@ -18,7 +16,6 @@ def get_weather():
     try:
         client_ip = request.headers.get('X-Forwarded-For', 'fetch:ip')
         city = request.args.get('query', client_ip)
-        app.logger.info('client ip is:', client_ip)
         api_response = requests_utilities.get_weather_by_location_json(city)
         weather_dict = requests_utilities.get_info_from_json(api_response)
         weather_dict['current_visibility'] = utilities.visibility_scale_to_desc(weather_dict['current_visibility'])
