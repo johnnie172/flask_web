@@ -32,9 +32,15 @@
                 <div class="contact-icon-facebook">
                     <a href="https://www.facebook.com/Jhonnie.walker/" target="_blank" title="facebook"><i class="fab fa-facebook fa-3x tm-nav-icon"></i></a>
                 </div>
-                <div class="contact-icon-home">
-                    <a href="/" title="home"><i class="fas fa-home fa-3x tm-nav-icon"></i></a>
+                <div class="contact-icon-github">
+                    <a href="https://github.com/johnnie172" target="_blank" title="github"><i class="fab fa-github fa-3x tm-nav-icon"></i></a>
                 </div>
+                {% if show_home_icon == 'no' %}
+                {% else%}
+                    <div class="contact-icon-home">
+                        <a href="/" title="home"><i class="fas fa-home fa-3x tm-nav-icon"></i></a>
+                    </div>
+                {% endif %}
             </div>
             <div class="container tm-site-header-container">
                 {% block content %}{% endblock %}
