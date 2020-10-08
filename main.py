@@ -14,7 +14,7 @@ def index():
 def get_weather():
     #todo get exepctions and error
     try:
-        client_ip = request.headers.get('X-Forwarded-For', 'fetch:ip')
+        client_ip = request.headers.get('X-Forwarded-For', request.headers.get('X-Real-IP'))
         city = request.args.get('query', client_ip)
         api_response = requests_utilities.get_weather_by_location_json(city)
         weather_dict = requests_utilities.get_info_from_json(api_response)

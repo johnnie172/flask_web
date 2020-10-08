@@ -10,7 +10,7 @@ def visibility_scale_to_desc(current_visibility_int):
         8 : 'Very good', 9 : 'Exceptional', 10 : 'Exceptional'
     }
 
-    current_visibility_str = current_visibility_dict[current_visibility_int]
+    current_visibility_str = current_visibility_dict.get(current_visibility_int, "unknown")
 
     return current_visibility_str
 
