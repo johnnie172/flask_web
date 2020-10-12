@@ -35,6 +35,8 @@ def get_weather_by_location_json(city):
         'access_key': consts.ACCESS_KEY,
         'query': city
     }
+
+    logger.info('The params are: {}'.format(params))
     api_result = requests.get(consts.WEB_FOR_WEATHER, params)
     logger.info('The api request is: {}'.format(api_result))
     api_response = api_result.json()
