@@ -36,9 +36,9 @@ def get_weather_by_location_json(city):
         'query': city
     }
     api_result = requests.get(consts.WEB_FOR_WEATHER, params)
-    logger.info('The api request is:'.format(api_result))
+    logger.info('The api request is: {}'.format(api_result))
     api_response = api_result.json()
-    logger.info('The api response is:'.format(api_response))
+    logger.info('The api response is: {}'.format(api_response))
 
     if 'request' not in api_response:
         logger.error('No response from api')
