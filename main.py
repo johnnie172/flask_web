@@ -4,6 +4,8 @@ import sys
 import logging
 
 app = Flask(__name__, static_url_path='')
+logging.basicConfig(filename='flask.log', level=logging.INFO, format='%(asctime)s: %(module)s: %(levelname)s: %(message)s')
+logger = logging.getLogger(__name__)
 
 
 @app.route('/')
@@ -13,10 +15,18 @@ def index():
 @app.route('/weather', methods=['GET'])
 def get_weather():
     #todo get exepctions and error
+    #todo log to city client ip and such
+    #todo log to response
+
     try:
         client_ip = request.headers.get('X-Forwarded-For', request.headers.get('X-Real-IP'))
+        if not client_ip:
+            client_ip = request.headers.get('X-Forwarded-For', 'fetch:ip')
+        logger.info('The ip is: {}'.format(client_ip))
         city = request.args.get('query', client_ip)
+        logger.info('city: {}'.format(city))
         api_response = requests_utilities.get_weather_by_location_json(city)
+        logger.info('Response:{}'.format(api_response))
         weather_dict = requests_utilities.get_info_from_json(api_response)
         weather_dict['current_visibility'] = utilities.visibility_scale_to_desc(weather_dict['current_visibility'])
         weather_dict['current_desc'] = utilities.change_desc_to_alphabet_only(weather_dict['current_desc'])

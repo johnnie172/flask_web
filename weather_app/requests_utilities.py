@@ -3,15 +3,20 @@
 import urllib
 import requests
 from weather_app import consts
+import logging
 
 # todo adding api for all cities in the world
+logger = logging.getLogger(__name__)
+
 
 def check_for_internet_connection(host='http://google.com'):
 
     try:
         urllib.request.urlopen(host, timeout=2)
+        logger.info(consts.INTERNET_CONNECTION_OK_MESSEGE)
         return True
     except:
+        logger.exception(consts.INTERNET_CONNECTION_FAIL_MESSEGE)
         return False
 
 

@@ -7,4 +7,3 @@ ACCESS_KEY = os.environ.get('WEATHER_KEY')
 
 INTERNET_CONNECTION_OK_MESSEGE = 'Internet connection ok!'
 INTERNET_CONNECTION_FAIL_MESSEGE = 'Connection to internet failed!'
-
