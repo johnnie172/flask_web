@@ -31,7 +31,7 @@ def get_weather():
         weather_dict['current_desc'] = utilities.change_desc_to_alphabet_only(weather_dict['current_desc'])
         weather_str = utilities.make_string_for_weather(weather_dict)
     except:
-        logger.exception()
+        logger.exception('ERROR')
         raise Exception('An error occurred!')
     
     return render_template('weather.html', weather_str=weather_str, api_response=api_response, weather_dict=weather_dict)
