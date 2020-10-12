@@ -26,7 +26,6 @@ def get_weather():
         city = request.args.get('query', client_ip)
         logger.info('city: {}'.format(city))
         api_response = requests_utilities.get_weather_by_location_json(city)
-        logger.info('Response:{}'.format(api_response))
         weather_dict = requests_utilities.get_info_from_json(api_response)
         weather_dict['current_visibility'] = utilities.visibility_scale_to_desc(weather_dict['current_visibility'])
         weather_dict['current_desc'] = utilities.change_desc_to_alphabet_only(weather_dict['current_desc'])
