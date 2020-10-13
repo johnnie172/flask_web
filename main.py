@@ -4,7 +4,7 @@ import sys
 import logging
 
 app = Flask(__name__, static_url_path='')
-logging.basicConfig(filename='flask.log', level=logging.INFO, format='%(asctime)s: %(module)s: %(levelname)s: %(message)s')
+logging.basicConfig(filename='flask.log', level=30, format='%(asctime)s: %(module)s: %(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 
