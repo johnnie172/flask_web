@@ -44,6 +44,10 @@ def choose_city():
 def nasa():
     return render_template('nasa.html')
 
+@app.route('/web')
+def web():
+    return render_template('web.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
