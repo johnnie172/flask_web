@@ -93,6 +93,10 @@ p {
     height: 100px;
 }
 
+.icon--exit {
+  color: #ff7f00;
+}
+
 .weather-display {
   display: flex;
   flex-direction: row-reverse;
@@ -142,8 +146,9 @@ margin: auto;
 
 .project-inside-box {
   position: initial;
-  height: 77%;
-  overflow: scroll;
+  height: 97%;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .project-pic-center{
