@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="details__bg details__bg--down">
+	<a href="/" title="exit"><i class="fas fa-2x fa-times icon--exit tm-fa-close"></i></a>
 	<div class = "weather-display">
 	    <div class= "weather-pic">
 		<img src="{{ api_response['current']['weather_icons'][0] }}"/>
