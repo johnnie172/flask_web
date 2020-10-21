@@ -16,6 +16,11 @@ h2 {
   color: #ff7f00;
 }
 
+h3 {
+  font-size: 1.35rem;
+  text-align: center;
+}
+
 #tm-bg {
   position: fixed;
   top: 0;
